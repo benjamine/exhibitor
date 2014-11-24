@@ -1,0 +1,483 @@
+
+h1 {
+  display: inline-block;
+}
+
+.size-mode-toggle {
+  display: inline-block;
+}
+
+.exhibitor {
+  width: 100%;
+  height: 80px;
+}
+
+.when-empty {
+  position: absolute;
+  transition: all 2s;
+  opacity: 0;
+}
+
+.empty .when-empty {
+  opacity: 1;
+}
+
+.empty .map {
+  display: none;
+}
+
+.empty .exhibition {
+  display: none;
+}
+
+.exhibitor form {
+  transition: all 0.5s;
+}
+
+.exhibitor form p {
+  font-size: 2em;
+  padding: 40px;
+}
+
+input[type=search] {
+  border: none;
+  font-size: 1.5em;
+  width: 90%;
+  margin: 20px;
+}
+
+.map {
+  transition: all 1.5s;
+}
+
+.exhibition {
+  position: fixed;
+  bottom: 0;
+  height: 1px;
+  left: 0;
+  right: 0;
+  transition: all 1.5s;
+  overflow: scroll;
+  opacity: 0;
+}
+
+.exhibition a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  color: black;
+}
+
+.exhibition .navigation {
+  overflow: visible;
+}
+
+.map .back-to-map {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  display: block;
+  position: absolute;
+  left: 500px;
+  top: 0;
+  width: 200px;
+  transition: all 2s;
+  text-shadow: 0 0 2px #fff;
+}
+
+.map-mode .back-to-map {
+  display: none;
+  opacity: 0;
+}
+
+.exhibition-mode .map {
+  height: 0;
+}
+
+.exhibition-mode .map li {
+  opacity: 0;
+}
+
+.exhibition-mode .exhibition {
+  height: auto;
+  top: 200px;
+  opacity: 1;
+}
+
+.map h2 {
+  transition: all 0.5s;
+}
+
+.exhibition-mode .map .exhibited {
+  opacity: 1;
+  z-index: 100;
+}
+
+.exhibition-mode .map .exhibited h2 {
+  font-size: 2em;
+  text-align: left;
+  padding-left: 40px;
+}
+
+.exhibition-mode form {
+  opacity: 0;
+}
+
+.love-toggle {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5em;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.themes li:hover .love-toggle {
+  visibility: visible;
+  opacity: 1;
+  color: black;
+  text-shadow: 0 0 4px #fff;
+}
+
+.love-toggle:focus {
+  outline: 0;
+}
+
+li.loved-theme .love-toggle, li.loved-theme:hover .love-toggle {
+  visibility: visible;
+  opacity: 1;
+  color: red;
+}
+
+.themes {
+  li > div {
+    border: 4px solid #fff;
+  }
+
+  li.exact-match > div {
+    border: 4px solid #000;
+  }
+
+  li.suggestion > div {
+    border: 4px solid #88a;
+  }
+
+  li.exhibited > div {
+    border: 0;
+  }
+}
+
+.map li {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  transition: all 1s;
+}
+
+.map li > div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: url('images/fashion.jpg') center center no-repeat;
+  background-size: cover;
+  transition: all 1s;
+}
+
+.map a {
+  color: black;
+  text-shadow: 0 0 2px #fff;
+  text-decoration: none;
+}
+
+.map a:hover, .map .exhibited a {
+  color: white;
+  text-shadow: 0 0 2px #000;
+}
+
+h2 {
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  padding: 0;
+  padding: 40px 0 0 0;
+  margin: 0;
+}
+
+.map article {
+  background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.map article:hover, .map .exhibited article {
+  background: transparent;
+}
+
+.map h2 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.map ol {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.map ol li {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+@cell: 75px;
+
+.size-mode-decreasing .map {
+  .theme-index-0 {
+    width: @cell * 6;
+    height: @cell * 4;
+    left: @cell * 3;
+    top: 0;
+  }
+  .theme-index-1 {
+    width: @cell * 5;
+    height: @cell * 4;
+    left: @cell * 9;
+    top: 0;
+  }
+  .theme-index-2 {
+    width: @cell * 6;
+    height: @cell * 3;
+    left: @cell * 6;
+    top: @cell * 4;
+  }
+  .theme-index-3 {
+    width: @cell * 4;
+    height: @cell * 4;
+    left: @cell * 14;
+  }
+  .theme-index-4 {
+    width: @cell * 3;
+    height: @cell * 4;
+  }
+  .theme-index-5 {
+    width: @cell * 3;
+    height: @cell * 4;
+    left: @cell * 3;
+    top: @cell * 4;
+  }
+  .theme-index-6 {
+    width: @cell * 3;
+    height: @cell * 4;
+    left: @cell * 6;
+    top: @cell * 7;
+  }
+  .theme-index-7 {
+    width: @cell * 3;
+    height: @cell * 4;
+    left: @cell * 12;
+    top: @cell * 4;
+  }
+  .theme-index-8 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: 0;
+    top: @cell * 4;
+  }
+  .theme-index-9 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: @cell * 15;
+    top: @cell * 4;
+  }
+  .theme-index-10 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: @cell * 9;
+    top: @cell * 7;
+  }
+  .theme-index-11 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: @cell * 12;
+    top: @cell * 8;
+  }
+  .theme-index-12 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: @cell * 3;
+    top: @cell * 8;
+  }
+  .theme-index-13 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: 0;
+    top: @cell * 7;
+  }
+  .theme-index-14 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: @cell * 15;
+    top: @cell * 7;
+  }
+  .theme-index-15 {
+    width: @cell * 3;
+    height: @cell * 3;
+    left: @cell * 15;
+    top: @cell * 8;
+  }
+}
+
+
+.makeEvenTiles (@index) when (@index >= 0) {
+  .theme-index-@{index} {
+    left: 6 * @cell * mod(@index, 3);
+    top: 4 * @cell * floor(@index / 3) - @cell * (mod(@index, 3)) + @cell * 2;
+  }
+
+  .makeEvenTiles(@index - 1);
+}
+
+.size-mode-even .map .themes {
+  li {
+    width: @cell * 6;
+    height: @cell * 4;
+  }
+  .makeEvenTiles(20);
+  .theme-index-0 {
+    top: 0;
+    height: @cell * 6;
+  }
+  .theme-index-1 {
+    top: 0;
+    height: @cell * 5;
+  }
+}
+
+.map .removed, .map .just-appeared {
+  opacity: 0;
+}
+
+.exhibition-mode .map .themes .exhibited {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 100;
+}
+
+.items {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.items li {
+  position: relative;
+  display: block;
+  width: 19%;
+  height: 300px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.items .item-index-0 {
+  width: 40%;
+  height: 600px;
+}
+.items .item-index-15 {
+  float: right;
+  width: 40%;
+  height: 600px;
+}
+.items li > div {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  right: 30px;
+  bottom: 80px;
+  background: url('images/jacket.jpg') center center no-repeat;
+  background-size: cover;
+}
+.items article {
+  font-size: 0.7em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.items article > div {
+  position: absolute;
+  opacity: 0;
+  bottom: -60px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  transition: opacity 1s;
+}
+
+.items h3, .items p {
+  padding: 0;
+  margin: 0;
+}
+
+.items li:hover article > div {
+  opacity: 1;
+}
+
+.map .theme-alexander-mc-queen > div {
+  background-image: url('images/alexander-mc-queen.jpg');
+}
+.map .theme-alexander-wang > div {
+  background-image: url('images/alexander-wang.jpg');
+}
+.map .theme-christopher-kane > div {
+  background-image: url('images/christopher-kane.jpg');
+}
+.map .theme-jason-wu > div {
+  background-image: url('images/jason-wu.jpg');
+}
+.map .theme-shoes > div {
+  background-image: url('images/shoes.jpg');
+}
+.map .theme-scarves > div {
+  background-image: url('images/scarves.jpg');
+}
+.map .theme-balenciaga > div {
+  background-image: url('images/balenciaga.jpg');
+}
+.map .theme-sunglasses > div {
+  background-image: url('images/sunglasses.jpg');
+}
+.map .theme-trenches > div {
+  background-image: url('images/trenches.jpg');
+}
+.map .theme-winter > div {
+  background-image: url('images/winter.jpg');
+}
+.map .theme-high-heels > div {
+  background-image: url('images/high-heels.jpg');
+}
+.map .theme-hipster-island > div {
+  background-image: url('images/hipster-island.jpg');
+}
+.map .theme-summer > div {
+  background-image: url('images/summer.jpg');
+}
+.map .theme-leather-gloves > div {
+  background-image: url('images/leather-gloves.jpg');
+}

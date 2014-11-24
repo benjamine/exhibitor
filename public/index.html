@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>exhibitor demo</title>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+
+  <script src="components/jquery/dist/jquery.min.js"></script>
+  <script src="components/less/dist/less.min.js"></script>
+  <script src="../build/exhibitor.js"></script>
+  <style>
+  h1 {
+    margin: 0.5em;
+  }
+  body > div {
+    margin: 20px;
+  }
+  </style>
+</head>
+<body>
+  <h1>exhibitor demo</h1><button class="size-mode-toggle">layout mode</button>
+  <script>
+    /* global $ */
+    var exhib;
+    $(function(){
+      exhib = window.exhibitor.bootstrap();
+      $('.size-mode-toggle').click(function(){
+        if (exhib.element.is('.size-mode-even')) {
+          exhib.element.removeClass('size-mode-even').addClass('size-mode-decreasing');
+        } else {
+          exhib.element.removeClass('size-mode-decreasing').addClass('size-mode-even');
+        }
+      });
+    });
+  </script>
+
+  <section id="main" class="exhibitor size-mode-decreasing">
+    <form onsubmit="return false;">
+      <input id="q" name="q" type="search" placeholder="What are you looking for?" autocomplete="off">
+      <p class="when-empty">
+        nothing found :(
+      </p>
+    </form>
+    <section class="map">
+      <ol class="themes">
+        <li>
+          <div>
+            <a class="back-to-map" href="javascript:void(0)" title="Back to Map">
+              ⃞⌃⃞ ⃞ ▭
+              <br>
+              <span>Back to map</span>
+          </a>
+            <a href="javascript:void(0)">
+              <article>
+                <h2>theme</h2>
+                <button class="love-toggle">♡</button>
+              </article>
+            </a>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section class="exhibition">
+      <ol class="items">
+        <li>
+          <div>
+            <a href="javascript:void(0)">
+              <article>
+                <div>
+                  <h3>product name</h3>
+                  <p class="price">
+                    $ 1.613
+                  </p>
+                </div>
+              </article>
+            </a>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </section>
+  <footer>
+    &nbsp;
+  </footer>
+</body>
+</html>
