@@ -105,6 +105,7 @@ Exhibitor.prototype.query = function(q) {
   var self = this;
   var tryToMatchMoreThemes = true;
   this.queryInput.data('autocomplete-suggestion', '');
+  self.element.removeClass('has-autocomplete-suggestion');
   if (typeof q === 'undefined' || q === null || q === '') {
     this.themes = themes.slice();
     themes.forEach(function(theme){
@@ -147,7 +148,8 @@ Exhibitor.prototype.query = function(q) {
   function setSuggestion() {
     if (!suggested) {
       suggested = true;
-      self.queryInput.data('autocomplete-suggestion', filteredThemes.map(function(theme){
+      self.element.addClass('has-autocomplete-suggestion');
+      self.queryInput.data('autocomplete-suggestion', filteredThemes.map(function(theme) {
         return theme.name;
       }).join(' '));
     }
@@ -155,7 +157,7 @@ Exhibitor.prototype.query = function(q) {
     filteredThemes[filteredThemes.length - 1].suggestion = suggestionCount;
   }
   if (q !== '') {
-    themes.forEach(function(theme){
+    themes.forEach(function(theme) {
       if (filteredThemes.indexOf(theme) >= 0) {
         return;
       }
@@ -164,7 +166,7 @@ Exhibitor.prototype.query = function(q) {
         setSuggestion();
       }
     });
-    themes.forEach(function(theme){
+    themes.forEach(function(theme) {
       if (filteredThemes.indexOf(theme) >= 0) {
         return;
       }
